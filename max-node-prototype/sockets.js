@@ -56,9 +56,9 @@ wss.on('connection', function connection(ws,req) {
     // Handle the Max interactions here...
 maxApi.addHandler("send",(...args) => {
     maxApi.post("send args: " + args);
-    if (args.length === 5) {
+    if (args.length === 8) {
         //send via the socket connection ... so there needs to be a client receiving
-        send_values(args[0], args[1], args[2],args[3], args[4]);
+        send_values(args[0], args[1], args[2],args[3], args[4], args[5], args[6], args[7]);
        // maxApi.post(args);
     }
 });

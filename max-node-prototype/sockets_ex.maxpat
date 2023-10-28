@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 187.0, 123.0, 1020.0, 655.0 ],
+		"rect" : [ 178.0, 170.0, 1020.0, 655.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,84 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 562.845236122608185, 444.464281618595123, 29.5, 22.0 ],
+					"text" : "8"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 507.583330571651572, 444.464281618595123, 29.5, 22.0 ],
+					"text" : "7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 452.214283347129935, 444.464281618595123, 29.5, 22.0 ],
+					"text" : "6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 93.607141673564911, 73.5, 281.0, 35.0 ],
+					"text" : ";\rmax launchbrowser http://localhost:4200/client.html"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
+					"bgcolor2" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.105882352941176, 0.427450980392157, 0.976470588235294, 1.0 ],
+					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_proportion" : 0.5,
+					"bgfillcolor_type" : "color",
+					"fontsize" : 19.766075047976013,
+					"gradient" : 1,
+					"id" : "obj-2",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 93.607141673564911, 23.083333333333336, 192.0, 31.0 ],
+					"text" : "Launch the webpage"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-108",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 440.357143759727478, 44.0, 444.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Started with this demo: \nhttps://github.com/CEEESSLAB/CART451/tree/main/demos/n4m-demo-3 "
 				}
 
@@ -59,7 +130,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 440.357143759727478, 93.285709142684937, 453.571425676345825, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "\"Using the full path when opening a file\" example by Christopher Dobrian\nhttps://sites.uci.edu/camp2014/2014/04/09/using-the-full-path-when-opening-a-file/ "
 				}
 
@@ -199,7 +269,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-43",
-					"items" : [ "1.wav", ",", "2.wav", ",", "3.wav", ",", "4.wav", ",", "5.wav" ],
+					"items" : [ "1.wav", ",", "2.wav", ",", "3.wav", ",", "4.wav", ",", "5.wav", ",", "6.wav", ",", "7.wav", ",", "8.mp3" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -267,11 +337,11 @@
 				"box" : 				{
 					"id" : "obj-23",
 					"maxclass" : "newobj",
-					"numinlets" : 7,
-					"numoutlets" : 7,
-					"outlettype" : [ "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 120.0, 410.67857164144516, 351.214283347129822, 22.0 ],
-					"text" : "route A B C D E F"
+					"numinlets" : 10,
+					"numoutlets" : 10,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 120.0, 410.67857164144516, 517.321425020694846, 22.0 ],
+					"text" : "route A B C D E F G H I"
 				}
 
 			}
@@ -484,7 +554,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 171.5, 79.5, 103.0, 24.0 ],
+					"patching_rect" : [ 171.5, 124.5, 103.0, 24.0 ],
 					"text" : "Start the script"
 				}
 
@@ -496,7 +566,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 141.5, 126.5, 63.0, 22.0 ],
+					"patching_rect" : [ 126.5, 163.5, 63.0, 22.0 ],
 					"text" : "script stop"
 				}
 
@@ -508,7 +578,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 96.5, 80.5, 64.0, 22.0 ],
+					"patching_rect" : [ 96.5, 124.5, 64.0, 22.0 ],
 					"text" : "script start"
 				}
 
@@ -520,14 +590,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 96.5, 199.5, 123.0, 22.0 ],
+					"patching_rect" : [ 96.5, 199.5, 195.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"autostart" : 0,
+						"autostart" : 1,
 						"defer" : 0,
 						"watch" : 0
 					}
 ,
-					"text" : "node.script sockets.js"
+					"text" : "node.script sockets.js @autostart 1"
 				}
 
 			}
@@ -535,7 +605,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
-					"midpoints" : [ 210.0, 222.0, 426.0, 222.0, 426.0, 165.0, 449.857143759727478, 165.0 ],
+					"midpoints" : [ 282.0, 222.0, 426.0, 222.0, 426.0, 165.0, 449.857143759727478, 165.0 ],
 					"order" : 1,
 					"source" : [ "obj-1", 1 ]
 				}
@@ -566,8 +636,29 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-100", 0 ],
 					"source" : [ "obj-23", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-23", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-23", 7 ]
 				}
 
 			}
@@ -589,6 +680,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-86", 0 ],
 					"source" : [ "obj-23", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-23", 8 ]
 				}
 
 			}
@@ -689,6 +787,20 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-89", 0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-89", 0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-89", 0 ],
 					"source" : [ "obj-73", 0 ]
 				}
 
@@ -711,6 +823,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-43", 0 ],
 					"source" : [ "obj-89", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-89", 0 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}
@@ -750,7 +869,7 @@
 			}
 , 			{
 				"name" : "providepath.maxpat",
-				"bootpath" : "~/Desktop/CART410/Final Project/max-node-prototype",
+				"bootpath" : "~/Desktop/CART410/max-node-prototype",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -763,7 +882,7 @@
 			}
 , 			{
 				"name" : "sockets.js",
-				"bootpath" : "~/Desktop/CART410/Final Project/max-node-prototype",
+				"bootpath" : "~/Desktop/CART410/max-node-prototype",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
