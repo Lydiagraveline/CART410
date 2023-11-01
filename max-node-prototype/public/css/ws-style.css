@@ -15,21 +15,24 @@ h1 {
   height:500px;
   position:relative;
 }
-#pixel{
+/* #pixel{
   width:20px;
   height:20px;
   background:red;
   position:absolute;
   left:10px;
   top:10px;
-}
-#toSend{
+} */
+.toSend{
   margin-left:5vw;
-  width:90vw;
+  width:50vw;
   height:100px;
   background: #c533ff;
   padding:5px;
   display:flex;
+  margin:20px;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 .button:hover{

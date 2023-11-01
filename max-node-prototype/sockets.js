@@ -41,27 +41,31 @@ wss.on('connection', function connection(ws,req) {
 
         //from public html
         let jsonParse = JSON.parse(message);
-        //console.log(jsonParse);
-
 
         //maxApi.post( jsonParse);
         if(jsonParse.label ==="note"){
             maxApi.outlet(jsonParse.value);
-           
-        }
+        } 
+
+        if(jsonParse.label ==="sendMsg" ){
+            maxApi.outlet(jsonParse.label);
+            //maxApi.outlet(jsonParse.value);
+
+            maxApi.post(jsonParse.value);
+        } 
     
     })//message
 
 
-    // Handle the Max interactions here...
-maxApi.addHandler("send",(...args) => {
-    maxApi.post("send args: " + args);
-    if (args.length === 8) {
-        //send via the socket connection ... so there needs to be a client receiving
-        send_values(args[0], args[1], args[2],args[3], args[4], args[5], args[6], args[7]);
-       // maxApi.post(args);
-    }
-});
+   // Handle the Max interactions here...
+// maxApi.addHandler("send",(...args) => {
+//     maxApi.post("send args: " + args);
+//     if (args.length === 8) {
+//         //send via the socket connection ... so there needs to be a client receiving
+//         send_values(args[0], args[1], args[2],args[3], args[4], args[5], args[6], args[7]);
+//        // maxApi.post(args);
+//     }
+// });
 
 })//connection
 
