@@ -1,4 +1,5 @@
 const maxApi = require("max-api");
+const mic = require('mic');
 //import the Express library
 let express = require('express');
 const portNumber =4200;
@@ -18,7 +19,24 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res){
   res.send('<h1>Hello world</h1>');
 });
- 
+
+let microphone;
+let isMicrophoneActive = false;
+
+maxApi.addHandler('micToggle', () => {
+  if (!microphone) {
+    microphone = mic();
+    microphone.start();
+    isMicrophoneActive = true;
+    console.log('Microphone turned on');
+  } else {
+    microphone.stop();
+    microphone = null;
+    isMicrophoneActive = false;
+    console.log('Microphone turned off');
+  }
+});
+
 // make server listen for incoming messages
 server.listen(portNumber, function(){
   maxApi.post('listening on port:: '+portNumber);
@@ -31,6 +49,13 @@ function wsClientRequestRoute(req, res, next) {
     res.sendFile(__dirname + '/public/client.html');
 }
 
+// Handle the process exit cleanly
+process.on('exit', () => {
+    if (microphone) {
+      microphone.stop();
+    }
+  });
+
 //wss listens for the connection event for incoming sockets, and if one is connected -:
 //ws is  a single socket instance
 //req is the request
@@ -38,6 +63,21 @@ wss.on('connection', function connection(ws,req) {
 
     
     ws.on('message', function incoming(message) {
+
+        if (jsonParse.action === "toggleMic") {
+            // Toggle the microphone on button click
+            if (!microphone) {
+              microphone = mic();
+              microphone.start();
+              isMicrophoneActive = true;
+              console.log('Microphone turned on');
+            } else {
+              microphone.stop();
+              microphone = null;
+              isMicrophoneActive = false;
+              console.log('Microphone turned off');
+            }
+          }
 
         //from public html
         let jsonParse = JSON.parse(message);
@@ -55,17 +95,6 @@ wss.on('connection', function connection(ws,req) {
         } 
     
     })//message
-
-
-   // Handle the Max interactions here...
-// maxApi.addHandler("send",(...args) => {
-//     maxApi.post("send args: " + args);
-//     if (args.length === 8) {
-//         //send via the socket connection ... so there needs to be a client receiving
-//         send_values(args[0], args[1], args[2],args[3], args[4], args[5], args[6], args[7]);
-//        // maxApi.post(args);
-//     }
-// });
 
 })//connection
 

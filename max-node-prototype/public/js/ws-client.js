@@ -1,4 +1,11 @@
 window.onload = function () {
+
+
+  
+
+  var url = window.location.href;
+
+
   console.log("client js loaded in ws example");
  /* Establishing a WebSocket relies on the HTTP Upgrade mechanism , so the request for the protocol upgrade is implicit 
    * when we address the web server as ws://www.example.com or wss://www.example.com.
@@ -10,10 +17,46 @@ window.onload = function () {
 //1: when the connection is open (setup)
   ws.onopen = function () {
 
-  // the first button
+    var spacebar_pressed = false;
+window.onkeydown = function(event) {
+    if (event.keyCode == 32) {
+      //event.preventDefault();
+        spacebar_pressed = true;
+        //console.log("pressed");
+        let btn = document.getElementById("btnB");
+        btn.click();
+        btn.classList.add('active');
+       // document.querySelector('#btnB').click();
+        //ws.send(JSON.stringify({ label: "note", value: this.id }));
+        ws.send(JSON.stringify({  action: 'toggleMic' }));
+    };
+};
+window.onkeyup = function() {
+    if (event.keyCode == 32) {
+        spacebar_pressed = false;
+        //console.log("not pressed");
+        let btn = document.getElementById("btnB");
+        btn.classList.remove('active');
+        ws.send(JSON.stringify({ label: "note", value: "stop_listening" }));
+    };
+}
+  
+
+  // the b button
   document.querySelector("#btnA").addEventListener("click", function () {
     ws.send(JSON.stringify({ label: "note", value: this.id }));
   });
+
+  document.getElementById('toggleMicBtn').addEventListener('click', () => {
+    console.log("toggle mic");
+    ws.send(JSON.stringify({ action: 'toggleMic' }));
+  });
+
+    // the first button
+    document.querySelector("#btnB").addEventListener("click", function () {
+     // console.log("button b click");
+      //ws.send(JSON.stringify({ label: "note", value: this.id }));
+    });
 
     // the text input
     document.querySelector("#sendMsg").addEventListener("click", function() {
@@ -61,3 +104,4 @@ window.onload = function () {
     console.log("Connection is closed...");
   };
  }
+
